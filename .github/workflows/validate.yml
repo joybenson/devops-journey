@@ -1,0 +1,23 @@
+name: Repository Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          echo "Checking README.md"
+          test -f README.md
+          echo "Checking commands.txt"
+          test -f commands.txt
+          echo "Checking feature.txt"
+          test -f feature.txt
+          echo "All required files are present!"
