@@ -14,8 +14,12 @@ jobs:
 
       - name: Check required files
         run: |
+          echo "Checking README.md"
           test -f README.md
+          echo "Checking commands.md"
           test -f commands.md
+          echo "Checking commands.txt"
           test -f commands.txt
+          echo "Checking feature.txt"
           test -f feature.txt
           echo "All required files are present!"
